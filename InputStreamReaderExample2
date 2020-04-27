@@ -1,0 +1,15 @@
+import java.io.*;
+class Demo {
+public static void main(String args[]) {
+ char[] carset = new char[80];
+ System.out.println("Metin giriniz");
+ try {
+ Reader isr = new InputStreamReader(System.in);
+ isr.read(carset, 0, 80);
+ } catch (IOException e) {
+ System.out.println("Hata: " + e.toString());
+ }
+ String s = new String(carset);
+ System.out.println(s);
+ }
+} 
