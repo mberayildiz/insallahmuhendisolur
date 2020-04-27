@@ -1,0 +1,27 @@
+import java.io.*;
+
+public class Main {
+        public static void main(String[] args) throws IOException {
+
+        //Burada dosya yolunu gösterdik
+        String fileName = "C:/Users/mbera/Desktop/test.txt";
+
+        try (
+                //Dosyadan byte elde etme
+                FileInputStream fis = new FileInputStream(fileName);
+                //Bytlerı okuyup character'e çevirme
+                InputStreamReader isr = new InputStreamReader(fis);
+                //Charachter stream'den text'i okuma
+                BufferedReader br = new BufferedReader(isr)) { 
+
+            //Satır kontolü
+            String line;
+
+            //Satır null olmadığı sürece satırı yazdırma
+            while ((line = br.readLine()) != null) { 
+                System.out.println(line);
+            }
+        }
+    }
+
+}
