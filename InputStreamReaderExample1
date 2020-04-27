@@ -1,0 +1,23 @@
+import java.io.*;
+class Demo {
+public static void main(String args[]) {
+ char cbuf1[] = new char[64];
+ System.out.println("Metin giriniz :");
+ try {
+ Reader isr = new InputStreamReader(System.in);
+ isr.read(cbuf1, 0, 64);
+ } catch (IOException e) {
+ System.out.println("Hata: " + e.toString());
+ }
+ String s1 = new String(cbuf1);
+ Reader sr = new StringReader(s1);
+ char cbuf2[] = new char[64];
+ try {
+ sr.read(cbuf2, 0, 64);
+ } catch (IOException e) {
+ System.out.println("Hata: " + e.toString());
+ }
+ String s2 = new String(cbuf2);
+ System.out.println(s2);
+ }
+} 
